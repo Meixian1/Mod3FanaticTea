@@ -1,6 +1,16 @@
 # Mod3FanaticTea
 
 - Introduction: FanaticTea is intended to serve as an E-Commerce website focusing on the tea brand: Fanatic Tea. Tea lovers can shop for high-quality natural tea ingredients and customize their own tea assortments.
+
+- Ecommerce Site / WebApp Screenshots:
+
+  ![image](https://github.com/Meixian1/Mod3FanaticTea/assets/124223514/e253c56f-fb3f-49a4-b96f-7b104300ad57)
+ ![image](https://github.com/Meixian1/Mod3FanaticTea/assets/124223514/ef2ebb69-8a58-43f3-9c3c-f522371547a6)
+  ![image](https://github.com/Meixian1/Mod3FanaticTea/assets/124223514/2d4e6547-f1b5-4e07-b295-6fd21f7fb6d0)
+![image](https://github.com/Meixian1/Mod3FanaticTea/assets/124223514/70158fe8-ad21-4e54-aa4c-4cd621f133a8)
+
+
+
  
 - Technologies Used:
 - Frontend Technologies:
@@ -49,5 +59,5 @@ Project Cloning: - git clone https://github.com/Meixian1/Mod3FanaticTea.git
   - Improve on the UI/UX design
   - Add buttons of add and remove with read numbers on each listed ingredient item so customers can purchase each individual ingredient.
   
-  - Have a link to your hosted working app: https://fanatictea.onrender.com/
+- Have a link to your hosted working app: https://fanatictea.onrender.com/
  
