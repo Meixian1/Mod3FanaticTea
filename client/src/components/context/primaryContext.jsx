@@ -11,17 +11,25 @@ const PrimaryProvider = ({ children }) => {
   const [items, setItems] = useState([]);
 
   // Fetch products when the component mounts
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const response = await axios.get('/server/products');
-        setProducts(response.data);
-      } catch (error) {
-        console.error('Error fetching products:', error);
-      }
-    };
-    fetchProducts();
-  }, []);
+  // const fetchProducts = async () => {
+  //   try {
+  //     const response = await axios.get('/server/products');
+  //     setProducts(response.data);
+  //   } catch (error) {
+  //     console.error('Error fetching products:', error);
+  //   }
+  // };
+  // useEffect(() => {
+  //   const fetchProducts = async () => {
+  //     try {
+  //       const response = await axios.get('/server/products');
+  //       setProducts(response.data);
+  //     } catch (error) {
+  //       console.error('Error fetching products:', error);
+  //     }
+  //   };
+  //   fetchProducts();
+  // }, []);
 
   return (
     <primaryContext.Provider
@@ -30,6 +38,7 @@ const PrimaryProvider = ({ children }) => {
         setProducts,
         items,
         setItems,
+        // fetchProducts
       }}
     >
       {children}

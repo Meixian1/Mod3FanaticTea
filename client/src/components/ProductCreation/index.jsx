@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import './style.css';
 import ProductList from '../ProductDisplay';
+import { primaryContext } from '../context/primaryContext';
 
 const Products = ({ onProductCreated }) => {
   const [productAttributes, setProductAttributes] = useState({
-    image: "", // Add an image field
+    image: '', // Add an image field
     name: '',
     description: '',
     color: '',
@@ -14,10 +15,13 @@ const Products = ({ onProductCreated }) => {
     price: 0,
   });
 
+  const { setProducts } = useContext(primaryContext);
+
   // const [selectedImage, setSelectedImage] = useState('');
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
+    
     setProductAttributes((prevState) => ({
       ...prevState,
       [name]: value,
@@ -36,7 +40,7 @@ const Products = ({ onProductCreated }) => {
   
       if (response.status >= 200 && response.status < 300) {
         setProductAttributes({
-          image: "",
+          image: '',
           name: '',
           description: '',
           color: '',
@@ -46,8 +50,19 @@ const Products = ({ onProductCreated }) => {
         });
   
         // Pass the newly created product data to the parent component (ProductList)
-        onProductCreated(response.data); // This line sends the data to ProductList
-  
+        // onProductCreated(response.data); // This line sends the data to ProductList
+       console.log('fetch new products')
+        const fetchProducts = async () => {
+          try {
+            const response = await axios.get('/server/products');
+            setProducts(response.data);
+          } catch (error) {
+            console.error('Error fetching products:', error);
+          }
+        };
+
+        await fetchProducts()
+
         console.log('Product registered successfully:', response.data);
       } else {
         console.error('Error registering product:', response.data);
@@ -122,6 +137,7 @@ const Products = ({ onProductCreated }) => {
             type="text"
             id="image"
             name="image"
+            value={productAttributes.image}
             onChange={handleInputChange}
           />
           {productAttributes.image && (

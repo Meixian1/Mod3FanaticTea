@@ -47,9 +47,9 @@ function App() {
       </div>
       <div>
           <HomePage/>
-        <ProductCreation/>
-        {/* <CheckoutProcess/>
-         <Contact/>   */}
+        <ProductCreation  />
+        <CheckoutProcess/>
+         <Contact/>  
       </div>
     </div>
   );
