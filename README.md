@@ -1,3 +1,5 @@
+A note for my instructor only: for this project, please exclude the components that were not used: ImageUploader, ProductDisplayCards, ProductPlaceholder, DisplayImages, StripeAPI. Thank You! 
+
 # Mod3FanaticTea
 
 - Introduction: FanaticTea is intended to serve as an E-Commerce website focusing on the tea brand: Fanatic Tea. Tea lovers can shop for high-quality natural tea ingredients and customize/personalize their own tea products and assortments tailoring to their healty life-style.
