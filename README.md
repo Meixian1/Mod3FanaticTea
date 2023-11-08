@@ -53,7 +53,8 @@ Project Cloning: - git clone https://github.com/Meixian1/Mod3FanaticTea.git
 
 - Unsolved Problems:
   - On Tea Customization, the url images submitted were intended to display on the screen, but the images did not render/display after the entire FanaticTea Ecommerce website/WebApp was hosted on Render Web Service.
-  - Same for the image for the Google Map is not displaying after hosted on Render Web Service, the error says that the images cannot be loaded due to the API security with Google. 
+  - Same for the image for the Google Map is not displaying after hosted on Render Web Service, the error says that the images cannot be loaded due to the API security with Google.
+  - Not able to implement the API for the Payment Gateway yet such as with the Stripe Payment Gateway using its API. 
 
 - Future Enhancements: Identify future features and enhancements planned for the project.
   - Add more ingredient information such as price and benefits...
