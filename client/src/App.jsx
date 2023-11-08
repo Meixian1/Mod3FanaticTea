@@ -16,10 +16,10 @@ function App() {
   const [uploadedImages, setUploadedImages] = useState([]);
   const [cartItems, setCartItems] = useState([]); // Define cartItems state
 
-  const handleImagesUploaded = (images) => {
-    // Update the uploadedImages state
-    setUploadedImages(images);
-  };
+  // const handleImagesUploaded = (images) => {
+  //   // Update the uploadedImages state
+  //   setUploadedImages(images);
+  // };
 
   const handleAddToCart = (item) => {
     setCartItems([...cartItems, item]);

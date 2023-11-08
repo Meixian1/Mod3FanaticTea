@@ -72,60 +72,6 @@ const Products = ({ onProductCreated }) => {
     }
   };
   
-
-  // const handleImageUpload = (e) => {
-  //   const file = e.target.files[0];
-  //   const validImageTypes = ['image/jpeg', 'image/jpg', 'image/png'];
-  //   if (file instanceof Blob || file instanceof File) {
-  //     // Set the selected image
-  //     setSelectedImage(URL.createObjectURL(file));
-
-  //     // Update the image field in the productAttributes
-  //     setProductAttributes((prevState) => ({
-  //       ...prevState,
-  //       image: file,
-  //     }));
-  //   } else {
-  //     console.error('Invalid file selected.');
-  //   }
-  // };
-
-
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   console.log('Submit button clicked'); // Add this line
-  // // ...
-  
-  //   try {
-  //     const response = await axios({
-  //       method: "POST",
-  //       url: "/server/products",
-  //       data: productAttributes
-  //     });
-
-  //     if (response.status >= 200 && response.status < 300) {
-  //       setProductAttributes({
-  //         image: "",
-  //         name: '',
-  //         description: '',
-  //         color: '',
-  //         size: '',
-  //         weight: '',
-  //         price: 0,
-  //       });
-  //       // ! also !!!! add to local state so we see this product now
-
-  //       // Pass the newly created product data to the parent component (ProductList)
-  //       onProductCreated(response.data);
-  //       console.log('Product registered successfully:', response.data);
-  //     } else {
-  //       console.error('Error registering product:', response.data);
-  //     }
-  //   } catch (error) {
-  //     console.error('There was an error sending the request:', error);
-  //   }
-  // };
-
   return (
     <div className='product-container'>
       <div className='custom-Column'>
@@ -227,3 +173,57 @@ const Products = ({ onProductCreated }) => {
 };
 
 export default Products;
+
+
+  // const handleImageUpload = (e) => {
+  //   const file = e.target.files[0];
+  //   const validImageTypes = ['image/jpeg', 'image/jpg', 'image/png'];
+  //   if (file instanceof Blob || file instanceof File) {
+  //     // Set the selected image
+  //     setSelectedImage(URL.createObjectURL(file));
+
+  //     // Update the image field in the productAttributes
+  //     setProductAttributes((prevState) => ({
+  //       ...prevState,
+  //       image: file,
+  //     }));
+  //   } else {
+  //     console.error('Invalid file selected.');
+  //   }
+  // };
+
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   console.log('Submit button clicked'); // Add this line
+  // // ...
+  
+  //   try {
+  //     const response = await axios({
+  //       method: "POST",
+  //       url: "/server/products",
+  //       data: productAttributes
+  //     });
+
+  //     if (response.status >= 200 && response.status < 300) {
+  //       setProductAttributes({
+  //         image: "",
+  //         name: '',
+  //         description: '',
+  //         color: '',
+  //         size: '',
+  //         weight: '',
+  //         price: 0,
+  //       });
+  //       // ! also !!!! add to local state so we see this product now
+
+  //       // Pass the newly created product data to the parent component (ProductList)
+  //       onProductCreated(response.data);
+  //       console.log('Product registered successfully:', response.data);
+  //     } else {
+  //       console.error('Error registering product:', response.data);
+  //     }
+  //   } catch (error) {
+  //     console.error('There was an error sending the request:', error);
+  //   }
+  // };
