@@ -5,6 +5,7 @@ import './style.css';
 import CheckoutProcess from '../CheckoutProcess';
 import { primaryContext } from '../context/primaryContext';
 
+
 const ProductList = ({ productSubmitted }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const { products, setProducts } = useContext(primaryContext);
@@ -40,26 +41,33 @@ const ProductList = ({ productSubmitted }) => {
 
   const handleToggleEdit = (product) => {
     // Set the product being edited
-    setEditedProduct(product);
+    setEditedProduct({ ...product });
   };
 
-  const handleUpdateProduct = async (product) => {
+  const handleUpdateProduct = async () => {
     try {
-      const updatedProduct = await axios.put(
-        `/server/products/${product._id}`,
-        product
+      const response = await axios.put(
+        `/server/products/${editedProduct._id}`,
+        editedProduct
       );
-
-      // Update the product in the state
-      setProducts((prevProducts) =>
-        prevProducts.map((prevProduct) =>
-          prevProduct._id === updatedProduct._id ? updatedProduct : prevProduct
-        )
-      );
+  
+      if (response.status === 200) {
+        // Update the product in the state
+        setProducts((prevProducts) =>
+          prevProducts.map((prevProduct) =>
+            prevProduct._id === editedProduct._id ? editedProduct : prevProduct
+          )
+        );
+  
+        // Clear the editedProduct state to exit edit mode
+        setEditedProduct(null);
+      } else {
+        console.error('Error updating product. Unexpected server response:', response);
+      }
     } catch (error) {
       console.error('Error updating product:', error);
     }
-  };
+  };  
 
   return (
     <div>
@@ -72,12 +80,12 @@ const ProductList = ({ productSubmitted }) => {
               alt="Product Image"
               style={{ maxWidth: '100%', maxHeight: '200px' }}
             />
-            {editedProduct === product ? (
+            {editedProduct && editedProduct._id === product._id ? (
               // In edit mode
               <div>
                 <input
                   name="name"
-                  value={product.name}
+                  value={editedProduct.name}
                   onChange={(e) =>
                     setEditedProduct({
                       ...editedProduct,
@@ -87,7 +95,7 @@ const ProductList = ({ productSubmitted }) => {
                 />
                 <input
                   name="description"
-                  value={product.description}
+                  value={editedProduct.description}
                   onChange={(e) =>
                     setEditedProduct({
                       ...editedProduct,
@@ -97,7 +105,7 @@ const ProductList = ({ productSubmitted }) => {
                 />
                 <input
                   name="color"
-                  value={product.color}
+                  value={editedProduct.color}
                   onChange={(e) =>
                     setEditedProduct({
                       ...editedProduct,
@@ -107,7 +115,7 @@ const ProductList = ({ productSubmitted }) => {
                 />
                 <input
                   name="weight"
-                  value={product.weight}
+                  value={editedProduct.weight}
                   onChange={(e) =>
                     setEditedProduct({
                       ...editedProduct,
@@ -117,7 +125,7 @@ const ProductList = ({ productSubmitted }) => {
                 />
                 <input
                   name="price"
-                  value={product.price}
+                  value={editedProduct.price}
                   onChange={(e) =>
                     setEditedProduct({
                       ...editedProduct,
@@ -125,14 +133,7 @@ const ProductList = ({ productSubmitted }) => {
                     })
                   }
                 />
-                <button
-                  onClick={() => {
-                    handleUpdateProduct(editedProduct);
-                    setEditedProduct(null); // Exit edit mode
-                  }}
-                >
-                  Update Product
-                </button>
+                <button onClick={handleUpdateProduct}>Update Product</button>
               </div>
             ) : (
               // In display mode
@@ -161,6 +162,165 @@ const ProductList = ({ productSubmitted }) => {
 };
 
 export default ProductList;
+
+
+
+// const ProductList = ({ productSubmitted }) => {
+//   const [searchQuery, setSearchQuery] = useState('');
+//   const { products, setProducts } = useContext(primaryContext);
+
+//   // State to store the product being edited
+//   const [editedProduct, setEditedProduct] = useState(null);
+
+//   // Fetch products when the component mounts
+//   useEffect(() => {
+//     fetchProducts();
+//   }, []);
+
+//   // Function to fetch products
+//   const fetchProducts = async () => {
+//     try {
+//       const response = await axios.get('/server/products');
+//       setProducts(response.data);
+//     } catch (error) {
+//       console.error('Error fetching products:', error);
+//     }
+//   };
+
+//   const handleDelete = async (productId) => {
+//     try {
+//       await axios.delete(`/server/products/${productId}`);
+//       setProducts((prevProducts) =>
+//         prevProducts.filter((product) => product._id !== productId)
+//       );
+//     } catch (error) {
+//       console.error('Error deleting product:', error);
+//     }
+//   };
+
+//   const handleToggleEdit = (product) => {
+//     // Set the product being edited
+//     setEditedProduct(product);
+//   };
+
+//   const handleUpdateProduct = async (product) => {
+//     try {
+//       const updatedProduct = await axios.put(
+//         `/server/products/${product._id}`,
+//         product
+//       );
+
+//       // Update the product in the state
+//       setProducts((prevProducts) =>
+//         prevProducts.map((prevProduct) =>
+//           prevProduct._id === updatedProduct._id ? updatedProduct : prevProduct
+//         )
+//       );
+//     } catch (error) {
+//       console.error('Error updating product:', error);
+//     }
+//   };
+
+//   return (
+//     <div>
+//       <div className="productList-container">
+//         {products.map((product) => (
+//           <div key={product._id} className="product-entry">
+//             {/* Display the image */}
+//             <img
+//               src={product.image}
+//               alt="Product Image"
+//               style={{ maxWidth: '100%', maxHeight: '200px' }}
+//             />
+//             {editedProduct === product ? (
+//               // In edit mode
+//               <div>
+//                 <input
+//                   name="name"
+//                   value={product.name}
+//                   onChange={(e) =>
+//                     setEditedProduct({
+//                       ...editedProduct,
+//                       name: e.target.value,
+//                     })
+//                   }
+//                 />
+//                 <input
+//                   name="description"
+//                   value={product.description}
+//                   onChange={(e) =>
+//                     setEditedProduct({
+//                       ...editedProduct,
+//                       description: e.target.value,
+//                     })
+//                   }
+//                 />
+//                 <input
+//                   name="color"
+//                   value={product.color}
+//                   onChange={(e) =>
+//                     setEditedProduct({
+//                       ...editedProduct,
+//                       color: e.target.value,
+//                     })
+//                   }
+//                 />
+//                 <input
+//                   name="weight"
+//                   value={product.weight}
+//                   onChange={(e) =>
+//                     setEditedProduct({
+//                       ...editedProduct,
+//                       weight: e.target.value,
+//                     })
+//                   }
+//                 />
+//                 <input
+//                   name="price"
+//                   value={product.price}
+//                   onChange={(e) =>
+//                     setEditedProduct({
+//                       ...editedProduct,
+//                       price: e.target.value,
+//                     })
+//                   }
+//                 />
+//                 <button
+//                   onClick={() => {
+//                     handleUpdateProduct(editedProduct);
+//                     setEditedProduct(null); // Exit edit mode
+//                   }}
+//                 >
+//                   Update Product
+//                 </button>
+//               </div>
+//             ) : (
+//               // In display mode
+//               <div>
+//                 <p>Product Name: {product.name}</p>
+//                 <p>Description: {product.description}</p>
+//                 <p>Color: {product.color}</p>
+//                 <p>Weight (lbs): {product.weight}</p>
+//                 <p>Price ($): {product.price}</p>
+//                 <button onClick={() => handleDelete(product._id)}>Delete</button>
+//                 <button onClick={() => handleToggleEdit(product)}>Edit</button>
+//               </div>
+//             )}
+//           </div>
+//         ))}
+//       </div>
+
+//       {productSubmitted && (
+//         <div className="submittedProduct-container">
+//           <h2>Submitted Product</h2>
+//           <pre>{JSON.stringify(productSubmitted, null, 2)}</pre>
+//         </div>
+//       )}
+//     </div>
+//   );
+// };
+
+// export default ProductList;
 
 
 // const ProductList = ({ productSubmitted }) => {
