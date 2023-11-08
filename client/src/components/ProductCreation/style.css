@@ -20,7 +20,7 @@
 .inputField{
     display: flex;
     flex-direction: column;
-    font-size: 10px;
+    font-size: 15px;
     align-items: end;
 }
 

@@ -43,7 +43,7 @@ const CheckoutProcess = () => {
       <div>
         <ul>
           <li>
-            <h1>Item 1</h1>
+            <h1>16 Unit Box</h1>
             <button onClick={() => handleAddToCart('item1')}>Add</button>
             <input type="text" value={itemValues.item1} readOnly />
             <button onClick={() => handleRemoveFromCart('item1')}>Remove</button>
