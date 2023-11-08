@@ -56,8 +56,11 @@ Project Cloning: - git clone https://github.com/Meixian1/Mod3FanaticTea.git
   - Same for the image for the Google Map is not displaying after hosted on Render Web Service, the error says that the images cannot be loaded due to the API security with Google. 
 
 - Future Enhancements: Identify future features and enhancements planned for the project.
+  - Add more ingredient information such as price and benefits...
   - Improve on the UI/UX design
+  - Put a dropper pin on the Google Map indicating the exact location. 
   - Add buttons of add and remove with read numbers on each listed ingredient item so customers can purchase each individual ingredient.
+  - Connect the social media icons to the respective accounts 
   
 - Have a link to your hosted working app: https://fanatictea.onrender.com/
  
