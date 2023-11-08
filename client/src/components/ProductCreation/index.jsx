@@ -129,8 +129,10 @@ const Products = ({ onProductCreated }) => {
   return (
     <div className='product-container'>
       <div className='custom-Column'>
-      <h1 className='product-Heading'><strong>Product Customization</strong></h1>
+      <h1 className='product-Heading'><strong>Tea Customization</strong></h1><br></br>
+      <h3>Choose 3 - 5 ingredients from the list above</h3> <br></br>
       <form onSubmit={handleSubmit}>
+       <div className='inputField'>
         <div>
           <label htmlFor="image">Product Image:</label>
           <input
@@ -160,9 +162,9 @@ const Products = ({ onProductCreated }) => {
           />
         </div>
         <br />
-        <div>
+        <div className='desp'>
           <label htmlFor="description">Description:</label>
-          <textarea
+          <textarea className='noResize'
             id="description"
             name="description"
             value={productAttributes.description}
@@ -213,13 +215,14 @@ const Products = ({ onProductCreated }) => {
             onChange={handleInputChange}
           />
         </div>
-       
         <br />
         <button type="submit">Submit</button>
+        </div>
       </form>
       </div>
       <div><ProductList /></div>
     </div>
+
   );
 };
 

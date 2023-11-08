@@ -2,7 +2,6 @@
     background-color: pink; 
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    padding:5%; 
 }
 
 .product-Heading{
@@ -18,4 +17,21 @@
     justify-content: center;
 }
 
-  
+.inputField{
+    display: flex;
+    flex-direction: column;
+    font-size: 25px;
+    align-items: end;
+}
+
+.desp{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.noResize{
+    resize: none;
+}

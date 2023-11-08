@@ -7,11 +7,14 @@
 }
 
 .brandName{
+    display: flex;
+    flex-direction: column;
     font-family: cursive;
     align-items: center;
     align-content: center;
     justify-content: center;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 3%;
 
 }
 
@@ -29,6 +32,7 @@
     margin: 10%;
     animation: vibration 0.2s ease infinite;
     border-radius: 40px;
+    
   }
 /* Apply 3D tilt effect on hover */
 .homeImageSize:hover {
@@ -71,4 +75,22 @@
   align-items: center;
   align-content: center;
   justify-content: center;
+}
+
+.imageTitle{
+  display: flex;
+  flex-direction: column;
+  gap: 7%;
+  font-family: cursive;
+  font-size: 20px;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  margin-right: 10%;
+}
+
+.tagline{
+  font-family: cursive;
+  font-size: 100%;
+
 }

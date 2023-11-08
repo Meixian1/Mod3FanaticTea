@@ -46,7 +46,7 @@ function App() {
         </Router>
       </div>
       <div>
-          <HomePage/>
+          <HomePage/> <br></br><br></br>
         <ProductCreation  />
         <CheckoutProcess/>
          <Contact/>  
