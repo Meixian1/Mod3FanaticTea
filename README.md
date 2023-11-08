@@ -1,6 +1,6 @@
 # Mod3FanaticTea
 
-- Introduction: FanaticTea is intended to serve as an E-Commerce website focusing on the tea brand: Fanatic Tea. Tea lovers can shop for high-quality natural tea ingredients and customize their own tea assortments.
+- Introduction: FanaticTea is intended to serve as an E-Commerce website focusing on the tea brand: Fanatic Tea. Tea lovers can shop for high-quality natural tea ingredients and customize their own tea products and assortments.
 
 - Ecommerce Site / WebApp Screenshots:
 
