@@ -1,5 +1,5 @@
 .product-container{
-    background-color: pink; 
+    background-color: rgba(250, 161, 174, 0.559); 
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     font-family: lato;

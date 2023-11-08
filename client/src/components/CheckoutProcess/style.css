@@ -1,4 +1,5 @@
 .checkout-container{
+    background-color:azure;
     display: flex;
     flex-direction: column;
     align-items: left;

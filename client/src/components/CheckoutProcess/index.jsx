@@ -4,7 +4,7 @@ import './style.css';
 const CheckoutProcess = () => {
   const [cart, setCart] = useState(0); // Initialize the cart with 0 items
 
-  const [itemValues, setItemValues] = useState({ item1: 0, item2: 0 }); // Initialize input values
+  const [itemValues, setItemValues] = useState({ item1: 0, item2: 0, item3: 0}); // Initialize input values
 
   const handleAddToCart = (itemName) => {
     setItemValues((prevValues) => {
@@ -33,32 +33,32 @@ const CheckoutProcess = () => {
     const item1Price = 45; // Price of Item 1
     const item2Price = 72; // Price of Item 2
     const item3Price = 95.85; // Price of Item 3
-    const totalPayment = itemValues.item1 * item1Price + itemValues.item2 * item2Price;
+    const totalPayment = itemValues.item1 * item1Price + itemValues.item2 * item2Price + itemValues.item3 * item3Price;
     return totalPayment;
   };
 
   return (
-    <div className="checkout-container">
+    <div className="checkout-container"><br></br>
       <h1>Shopping Cart</h1> <br></br>
      <p className='TeaSsortment'>Total Items in Cart: {calculateTotalItems()}</p>
       <div>
         <ul>
           <li>
-            <h1 className='TeaSsortment'>18-Unit Tea Assortment</h1>
+            <h1 className='TeaSsortment'>18-Unit Tea Assortment @ $45</h1>
             <button onClick={() => handleAddToCart('item1')}>Add</button>
             <input type="text" value={itemValues.item1} readOnly />
             <button onClick={() => handleRemoveFromCart('item1')}>Remove</button> 
           </li> <br></br>
           <li>
-            <h1 className='TeaSsortment'>32-Unit Tea Assortment</h1>
+            <h1 className='TeaSsortment'>32-Unit Tea Assortment @ $72</h1>
             <button onClick={() => handleAddToCart('item2')}>Add</button>
             <input type="text" value={itemValues.item2} readOnly />
             <button onClick={() => handleRemoveFromCart('item2')}>Remove</button>
           </li><br></br>
           <li>
-            <h1 className='TeaSsortment'>48-Unit Tea Assortment</h1>
-            <button onClick={() => handleAddToCart('item2')}>Add</button>
-            <input type="text" value={itemValues.item2} readOnly />
+            <h1 className='TeaSsortment'>48-Unit Tea Assortment @ $95.82</h1>
+            <button onClick={() => handleAddToCart('item3')}>Add</button>
+            <input type="text" value={itemValues.item3} readOnly />
             <button onClick={() => handleRemoveFromCart('item3')}>Remove</button>
           </li><br></br>
         </ul>

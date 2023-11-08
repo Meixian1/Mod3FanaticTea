@@ -130,7 +130,7 @@ const Products = ({ onProductCreated }) => {
     <div className='product-container'>
       <div className='custom-Column'>
       <h1 className='product-Heading'><strong>Tea Customization</strong></h1><br></br>
-      <h4>Choose 3 - 5 ingredients from the list above</h4> <br></br><br></br>
+      <h4>Choose 3 - 5 ingredients from the Ingredient List</h4> <br></br><br></br>
       <form onSubmit={handleSubmit}>
        <div className='inputField'>
         <div>
