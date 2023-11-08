@@ -27,6 +27,10 @@ app.use((req, res, next) => {
 app.use(fileUpload());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
+const distPath = path.join(_dirname, "../client/dist");
+
+app.use(express.static(distPath));
+
 // END MIDDLEWARE //
 
 // START ROUTES //
