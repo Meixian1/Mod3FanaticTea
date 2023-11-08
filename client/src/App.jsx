@@ -38,7 +38,7 @@ function App() {
           <Routes>
             {/* <Route path="/" element={<HomePage />} /> */}
             <Route path="/products" element={<ProductCreation />} />
-            {/* <Route path="/contact" element={<Contact />} /> */}
+            <Route path="/contact" element={<Contact />} />
             {/* <Route path="/images" element={<ImageUploader onImagesUploaded={handleImagesUploaded} />} /> */}
             {/* <Route path="/products" element={<ProductDisplayCards onAddToCart={handleAddToCart} onRemoveFromCart={handleRemoveFromCart} />} />
             <Route path="/checkout" element={<CheckoutProcess cartItems={cartItems} />} /> Pass cartItems to CheckoutProcess */}

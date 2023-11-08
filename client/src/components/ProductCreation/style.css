@@ -2,11 +2,12 @@
     background-color: pink; 
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    font-family: lato;
 }
 
 .product-Heading{
     margin: 5%;
-    font-family: cursive;
+    font-family: Pacifico;
 }
 
 .custom-Column{
@@ -20,6 +21,7 @@
 .inputField{
     display: flex;
     flex-direction: column;
+    font-family: lato;
     font-size: 15px;
     align-items: end;
 }
