@@ -45,7 +45,7 @@ GitHub
 Render Web Service
   
 - Getting Started: Info on how to clone and start the app and link to the deployed app on GitHub Pages/Render.
-- Connect the local Visual Studio Code to GitHub first - git init, git add ., git commit -m "message", git remote add origin 'URL' (in my case: git remote add origin https://github.com/Meixian1/EmoReleaseProject.git ) git push origin (your branch) (in my case: git push origin master).
+- Connect the local Visual Studio Code to GitHub first - git init, git add ., git commit -m "message", git remote add origin 'URL' (in my case: git remote add origin https://github.com/Meixian1/Mod3FanaticTea.git) git push origin (your branch) (in my case: git push origin master).
 - Then, I login to the Render.com and select Web Service hosting for hosting and rending my project. The steps are as follows:
   1. Configure the GitHub connecting to Render, select the correct project to be deployed.
   2. set up the envivronment varibles for whatever secret keys I am using and stored in the .env file, place the exact name for Key and password/passcode/secret key for Values... I also have to set up the Key: NODE_VERSION and Values: 20.9.0.
